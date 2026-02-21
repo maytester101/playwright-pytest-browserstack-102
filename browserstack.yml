@@ -1,0 +1,50 @@
+userName: <browserstack username>
+accessKey: <browserstack access key>
+
+framework: pytest
+parallelsPerPlatform: 2  # Run 2 tests in parallel per platform
+browserstackLocal: false  # Set to true if testing localhost/internal sites
+
+# Build and project information for BrowserStack dashboard
+buildName: "playwright-pytest-build"
+projectName: "playwright-pytest"
+
+# BrowserStack-specific options
+testObservability: true  # Enable test observability features
+networkLogs: true        # Capture network logs
+consoleLogs: info        # Capture console logs (info level)
+video: true              # Record video of test execution
+timezone: UTC            # Set timezone
+
+platforms:
+  # Windows Chrome - Latest
+  - os: Windows
+    osVersion: 11
+    browserName: chrome
+    browserVersion: latest
+    playwrightConfigOptions:
+      name: "Windows 11 - Chrome Latest"
+  
+  # Windows Edge - Latest
+  - os: Windows
+    osVersion: 11
+    browserName: msedge
+    browserVersion: latest
+    playwrightConfigOptions:
+      name: "Windows 11 - Edge Latest"
+  
+  # macOS Safari - Latest
+  - os: OS X
+    osVersion: Ventura
+    browserName: safari
+    browserVersion: latest
+    playwrightConfigOptions:
+      name: "macOS Ventura - Safari Latest"
+  
+  # macOS Chrome - Latest
+  - os: OS X
+    osVersion: Ventura
+    browserName: chrome
+    browserVersion: latest
+    playwrightConfigOptions:
+      name: "macOS Ventura - Chrome Latest"
